@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Text;
 using Newtonsoft.Json;
@@ -66,7 +65,7 @@ namespace Solid.SingleResponsibilityPrinciple.Incorrect
 
             using (SmtpClient smtpClient = new SmtpClient()
             {
-                PickupDirectoryLocation = Path.GetFullPath("./csharp/MailServer"),
+                PickupDirectoryLocation = Path.GetFullPath(PATH_MAIL_SERVER),
                 DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
                 EnableSsl = false,
                 Host = "smtp-mail.outlook.com",
