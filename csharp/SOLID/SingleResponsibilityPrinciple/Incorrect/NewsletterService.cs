@@ -4,6 +4,7 @@ using System.Text;
 using Newtonsoft.Json;
 using System.Linq;
 using System.Collections.Generic;
+using System.Net.Mail;
 
 namespace Solid.SingleResponsibilityPrinciple.Incorrect
 {
@@ -19,10 +20,15 @@ namespace Solid.SingleResponsibilityPrinciple.Incorrect
     {
         public void Register(string email)
         {
-            FileInfo db = new FileInfo("./csharp/DataSource/newsletter.json");
+            const string PATH_DATA_BASE = "./csharp/DataSource";
+
+            if (!Directory.Exists(PATH_DATA_BASE))
+                Directory.CreateDirectory(PATH_DATA_BASE);
+
+            FileInfo db = new FileInfo($"{PATH_DATA_BASE}/newsletter.json");
             List<string> content = new List<string>();
 
-            using (FileStream stream = db.Open(FileMode.Open, FileAccess.Read))
+            using (FileStream stream = db.Open(FileMode.OpenOrCreate, FileAccess.Read))
             {
                 using (StreamReader read = new StreamReader(stream, Encoding.UTF8))
                 {
@@ -46,6 +52,33 @@ namespace Solid.SingleResponsibilityPrinciple.Incorrect
 
                     writer.Write(temp);
                 }
+            }
+
+            this.SendMail(email);
+        }
+
+        private void SendMail(string email)
+        {
+            const string PATH_MAIL_SERVER = "./csharp/MailServer";
+
+            if (!Directory.Exists(PATH_MAIL_SERVER))
+                Directory.CreateDirectory(PATH_MAIL_SERVER);
+
+            using (SmtpClient smtpClient = new SmtpClient()
+            {
+                PickupDirectoryLocation = Path.GetFullPath("./csharp/MailServer"),
+                DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
+                EnableSsl = false,
+                Host = "smtp-mail.outlook.com",
+                Port = 587
+            })
+            {
+                smtpClient.Send(
+                    "newsletter@news.com.br",
+                    email,
+                    "Confirmação de Inscrição",
+                    "Sua inscrição na newsletter foi feita com sucesso."
+                );
             }
         }
     }

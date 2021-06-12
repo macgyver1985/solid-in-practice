@@ -527,3 +527,7 @@ temp/
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp,node,java,visualstudiocode
+
+# Custom Ignore
+DataSource/
+MailServer/
