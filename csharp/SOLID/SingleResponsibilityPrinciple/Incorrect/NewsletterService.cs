@@ -19,7 +19,7 @@ namespace Solid.SingleResponsibilityPrinciple.Incorrect
     {
         public void Register(string email)
         {
-            const string PATH_DATA_BASE = "./csharp/DataSource";
+            const string PATH_DATA_BASE = "./DataSource";
 
             if (!Directory.Exists(PATH_DATA_BASE))
                 Directory.CreateDirectory(PATH_DATA_BASE);
@@ -58,7 +58,7 @@ namespace Solid.SingleResponsibilityPrinciple.Incorrect
 
         private void SendMail(string email)
         {
-            const string PATH_MAIL_SERVER = "./csharp/MailServer";
+            const string PATH_MAIL_SERVER = "./MailServer";
 
             if (!Directory.Exists(PATH_MAIL_SERVER))
                 Directory.CreateDirectory(PATH_MAIL_SERVER);

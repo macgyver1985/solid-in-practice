@@ -6,7 +6,7 @@ namespace Solid.SingleResponsibilityPrinciple.Correct
 {
     public class SMTPService : ISMTPService
     {
-        const string PATH_MAIL_SERVER = "./csharp/MailServer";
+        const string PATH_MAIL_SERVER = "./MailServer";
 
         public SMTPService()
         {

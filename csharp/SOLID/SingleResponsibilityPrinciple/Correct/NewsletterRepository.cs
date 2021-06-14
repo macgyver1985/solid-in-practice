@@ -9,7 +9,7 @@ namespace Solid.SingleResponsibilityPrinciple.Correct
 {
     public class NewsletterRepository : INewsletterRepository
     {
-        const string PATH_DATA_BASE = "./csharp/DataSource";
+        const string PATH_DATA_BASE = "./DataSource";
 
         public NewsletterRepository()
         {

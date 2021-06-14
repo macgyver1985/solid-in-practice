@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/csharp/main/bin/Debug/netcoreapp3.1/main.exe",
+            "program": "${workspaceFolder}/main/bin/Debug/netcoreapp3.1/main.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
