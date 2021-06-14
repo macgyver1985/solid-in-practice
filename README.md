@@ -42,7 +42,7 @@ Segue cada um dos cinco princípios e o seu propósito.
 ##  Single Responsiblity Principle
 
 Uma classe deve ser especializada em um únido assunto e ter apenas uma responsabilidade.
-Construir uma *God Class* * é mais fácil e rápido, porem com o passar do tempo a manuteção e reaproveitamento desse código torna-se impraticável.
+Construir uma *God Class** é mais fácil e rápido, porem com o passar do tempo a manuteção e reaproveitamento desse código torna-se impraticável.
 
 ### Exemplo de SRP
 
