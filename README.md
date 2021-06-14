@@ -1,7 +1,7 @@
 # ÍNDICE
 
  - [INTRODUÇÃO](#introdução)
- - [PRINCÍPIOS S.O.L.I.D.](#princípios_solid)
+ - [PRINCÍPIOS S.O.L.I.D.](#princípios-solid)
  	- [Single Responsiblity Principle](#single-responsiblity-principle)
  - [GLOSSÁRIO](#glossário)
  - [REFERÊNCIAS](#referências)
